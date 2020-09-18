@@ -1,4 +1,4 @@
-
+//Guesing game by Faizan Karim
 #include <iostream>
 
 using namespace std;
