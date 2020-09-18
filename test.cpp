@@ -1,9 +1,11 @@
 
 #include <iostream>
 
-using namesppace std;
+using namespace std;
+//idk how to do this
 
 int main()
 {
-  int woo;
+  int woo = 0;
+  cout << woo;
 }
