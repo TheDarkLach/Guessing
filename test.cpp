@@ -19,7 +19,7 @@ int main()
       cout << "Guess between 0 and 100 : ";
       cin >> guess;
       guesses++;
-
+      //logic
       if (guess > num)
 	{
 	  cout << "Too high\n\n";
