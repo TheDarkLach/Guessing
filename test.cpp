@@ -8,31 +8,52 @@ using namespace std;
 int main()
 {
   //ints to track
-  int num, guess, guesses = 0;
+  int num, guess;
+  bool stillPlaying = true;
   srand(time(0));
-  num = rand() % 100;
-  cout << "Guess the number\n\n";
 
-  //repeats if guessed wrong
-  do
+   while (stillPlaying == true)
     {
-      cout << "Guess between 0 and 100 : ";
-      cin >> guess;
-      guesses++;
-      //logic
-      if (guess > num)
-	{
-	  cout << "Too high\n\n";
-	}
-      else if (guess < num)
-	{
-	  cout << "Too low\n\n";
-	}
-      else
-	{
-	  cout << "\n You guessed in\n" << guesses << "\ntries\n";
-	}
+      //these need to be in while loop for play again
+      int guesses = 0;
+      num = rand() % 100;
+      //repeats if guessed wrong
+      do
+        {
+          cout << "\nGuess between 0 and 100 : ";
+          cin >> guess;
+          guesses++;
+          //logic
+          if (guess > num)
+	    //if its greater its too high
+	    {
+	      cout << "\nToo high\n";
+	    }
+          else if (guess < num)
+	    //if its less its too low
+	    {
+	      cout << "\nToo low\n";
+	    }
+          else
+	    //guessed right
+	    {
+	      cout << "\nYou guessed in " << guesses << " tries\n\n";
+	    }
       
-    }while (guess != num);
+        }while (guess != num);
+	//play again code
+      char f;
+      cout << "Do you want to play again? Y/N\n\n";
+      cin >> f;
+      if (f == 'y')
+	{
+	  stillPlaying = true;
+	}
+	else
+	  {
+	    stillPlaying = false;
+	  }
+	  
+    }
   return 0;
-}
+ }
