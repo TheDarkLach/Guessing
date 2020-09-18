@@ -30,7 +30,7 @@ int main()
 	}
       else
 	{
-	  cout << "\n You guessed in\n" + guesses + "tries\n";
+	  cout << "\n You guessed in\n" << guesses << "\ntries\n";
 	}
       
     }while (guess != num);
