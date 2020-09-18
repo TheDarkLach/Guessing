@@ -3,24 +3,36 @@
 
 using namespace std;
 //idk how to do this
+//nvm i figured it out
 
 int main()
 {
-  int max = 100;
+  //ints to track
+  int num, guess, guesses = 0;
   srand(time(0));
-  int number = rand()%max;
-  cout << number;
+  num = rand() % 100;
+  cout << "Guess the number\n\n";
 
-  int guess;
-  cout << " ";
-  cin >> guess;
+  //repeats if guessed wrong
+  do
+    {
+      cout << "Guess between 0 and 100 : ";
+      cin >> guess;
+      guesses++;
 
-  if (guess < number)
-    {
-      cout << "guess too small";
-    }
-  else
-    {
-      cout << "guess too large";
-    }
+      if (guess > num)
+	{
+	  cout << "Too high\n\n";
+	}
+      else if (guess < num)
+	{
+	  cout << "Too low\n\n";
+	}
+      else
+	{
+	  cout << "\n You guessed in\n" + guesses + "tries\n";
+	}
+      
+    }while (guess != num);
+  return 0;
 }
